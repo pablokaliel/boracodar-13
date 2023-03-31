@@ -17,6 +17,12 @@ export const SwapperContainer = styled.div`
   background: #1f2937;
   border-radius: 8px;
   padding: 32px;
+  @media (max-width: 780px) {
+   width: 100%;
+   height: 100%;
+   padding: 32px 32px;
+   
+  }
   button {
     transition: all 0.3s;
     height: 56px;
@@ -39,10 +45,18 @@ export const DivInfo = styled.div`
   flex-direction: column;
   width: 50%;
   margin-right: 64px;
+  @media (max-width: 780px) {
+    width:100%;
+    margin-right:0px;
+    margin-top:215px;
+  }
 `;
 
 export const Swapper = styled.div`
   display: flex;
+  @media (max-width: 780px) {
+flex-direction: column-reverse;
+  }
 `;
 export const FlipCard = styled.div``;
 
@@ -89,6 +103,7 @@ export const DivNick = styled.div`
 export const DivTwoInputs = styled.div`
   display: flex;
   gap: 16px;
+
 `;
 
 export const DivValidate = styled.div`
@@ -153,6 +168,9 @@ export const DivCard = styled.div`
   transition: transform 0.6s;
   transform-style: preserve-3d;
   cursor: pointer;
+  @media (max-width: 780px) {
+width: 100%;
+  }
   perspective: 1000px;
   :hover {
     .info {
@@ -279,4 +297,8 @@ export const DivSecurityInfo = styled.div`
   font-size: 14px;
   line-height: 16px;
   color: #e5e7eb;
+
+  @media (max-width: 780px) {
+   display:none;
+  }
 `;
