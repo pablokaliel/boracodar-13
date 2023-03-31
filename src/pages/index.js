@@ -68,21 +68,21 @@ function Home() {
           <DivInfo>
             <DivNumberCard>
               <label htmlFor="number">Número do cartão</label>
-              <InputCard placeholder="Número do cartão" mask="9999 9999 9999 9999" id="number" name="number" value={number} onChange={handleChangeNumber} />
+              <InputCard placeholder="Número do cartão" mask="9999 9999 9999 9999" id="number" name="number" value={number} onChange={handleChangeNumber}  disableUnderline/>
               
             </DivNumberCard>
             <DivNick>
               <label htmlFor="name">Nome do titular</label>
-              <InputCard  placeholder="Nome como está no cartão" id="name" name="name" value={name} onChange={handleChangeName}/>
+              <InputCard  placeholder="Nome como está no cartão" id="name" name="name" type="text" value={name} onChange={handleChangeName} maxLength={20} disableUnderline/>
             </DivNick>
             <DivTwoInputs>
               <DivValidate>
                 <label htmlFor="validate">Validade</label>
-                <InputValitade placeholder="mm/aa" mask="99/99" id="validate" name="validate" value={validate} onChange={handleChangeValidate}/>
+                <InputValitade placeholder="mm/aa" mask="99/99" id="validate" name="validate" value={validate} onChange={handleChangeValidate} disableUnderline/>
               </DivValidate>
               <DivCVV>
                 <label htmlFor="code">CVV</label>
-                <InputCVV placeholder="***" mask="999" id="code" name="code" value={code} onChange={handleChangeCode}/>
+                <InputCVV placeholder="***" mask="999" id="code" name="code" value={code} onChange={handleChangeCode} disableUnderline/>
               </DivCVV>
             </DivTwoInputs>
           </DivInfo>

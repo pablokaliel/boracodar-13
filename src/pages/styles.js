@@ -18,6 +18,7 @@ export const SwapperContainer = styled.div`
   border-radius: 8px;
   padding: 32px;
   button {
+    transition: all 0.3s;
     height: 56px;
     width: 100%;
     margin-top: 48px;
@@ -26,6 +27,10 @@ export const SwapperContainer = styled.div`
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     font-size: 18px;
+
+    :hover{
+      background: #A855F7;
+    }
   }
 `;
 
@@ -244,6 +249,9 @@ export const DivNumbers = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+  text-align:justify;
+  letter-spacing:4px;
+  width: 100%;
   color: #fff;
   span {
   }
