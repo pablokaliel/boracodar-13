@@ -9,7 +9,7 @@
   }
   
   body{
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: rgba(17, 24, 39, 1);
   }
   #root,html,body{

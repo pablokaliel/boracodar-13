@@ -22,9 +22,20 @@ export const SwapperContainer = styled.div`
   border-radius: 8px;
 
   @media (max-width: 780px) {
-   width: 100%;
-   height: 100%;
-   padding: 32px 32px;
+    width: 100%;
+    height: 100%;
+    padding: 32px 32px;
+  }
+
+  .isdisabled {
+    opacity: 0.5;
+    :hover{
+      background:#9333ea;
+    }
+  }
+
+  .isnotdisabled {
+    opacity: 1;
   }
 
   button {
@@ -37,10 +48,10 @@ export const SwapperContainer = styled.div`
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     font-size: 18px;
-    
+
     transition: all 0.3s;
-    :hover{
-      background: #A855F7;
+    :hover {
+      background: #a855f7;
     }
   }
 `;
@@ -52,13 +63,13 @@ export const DivInfo = styled.div`
   margin-right: 64px;
 
   @media (max-width: 780px) {
-    width:100%;
-    margin-right:0px;
-    margin-top:215px;
+    width: 100%;
+    margin-right: 0px;
+    margin-top: 215px;
   }
 `;
 
-export const Swapper = styled.div`
+export const Swapper = styled.form`
   display: flex;
 
   @media (max-width: 780px) {
@@ -72,11 +83,15 @@ export const DivNumberCard = styled.div`
   margin-bottom: 24px;
 
   label {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #e5e7eb;
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
+
+    @media (max-width: 780px) {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -102,11 +117,15 @@ export const DivNick = styled.div`
   margin-bottom: 24px;
 
   label {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #e5e7eb;
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
+
+    @media (max-width: 780px) {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -120,11 +139,15 @@ export const DivValidate = styled.div`
   flex-direction: column;
 
   label {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #e5e7eb;
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
+
+    @media (max-width: 780px) {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -149,11 +172,15 @@ export const DivCVV = styled.div`
   flex-direction: column;
 
   label {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #e5e7eb;
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
+
+    @media (max-width: 780px) {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -187,7 +214,7 @@ export const DivCard = styled.div`
   }
 
   :hover {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
     .info {
       transform: rotateY(-180deg);
     }
@@ -218,7 +245,7 @@ export const CardBack = styled.div`
   width: 280px;
   padding-top: 16px;
   position: absolute;
-  left: 0px;
+  /* left: 0px; */
 
   background: rgba(17, 24, 39, 0.4);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -292,8 +319,8 @@ export const DivNumbers = styled.div`
   font-size: 16px;
   line-height: 16px;
 
-  text-align:justify;
-  letter-spacing:4px;
+  text-align: justify;
+  letter-spacing: 4px;
   color: #fff;
 `;
 
@@ -323,6 +350,6 @@ export const DivSecurityInfo = styled.div`
   color: #e5e7eb;
 
   @media (max-width: 780px) {
-   display:none;
+    display: none;
   }
 `;
