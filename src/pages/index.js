@@ -10,17 +10,18 @@ import {
   InputValitade,
   DivCVV,
   InputCVV,
-  DivCard,
-  CardFront,
   DivVisa,
   DivNumbers,
   DivNickAndValidate,
   DivSecurityInfo,
-  CardBack,
   Div,
   DivNumberCVV,
   DivCVVBack,
   Swapper,
+  FlipContainer,
+  Flipper,
+  Front,
+  Back,
 } from "./styles";
 
 import { useState } from "react";
@@ -28,6 +29,7 @@ import { useState } from "react";
 import visa from "../assets/visa.png";
 import security from "../assets/security.png";
 import payment from "../assets/payment.png";
+import help from "../assets/help.png";
 
 function Home() {
   const [name, setName] = useState("");
@@ -125,7 +127,10 @@ function Home() {
               </DivValidate>
 
               <DivCVV>
-                <label htmlFor="code">CVV</label>
+                <div>
+                <label htmlFor="code">CVV</label> 
+                 <img src={help} alt="botão de ajuda" title="este número está, geralmente, nas costas do seu cartão"/>
+                </div>
                 <InputCVV
                   placeholder="***"
                   mask="999"
@@ -139,8 +144,9 @@ function Home() {
             </DivTwoInputs>
           </DivInfo>
 
-          <DivCard>
-            <CardFront>
+          <FlipContainer>
+            <Flipper>
+            <Front>
               <DivVisa>
                 <img src={visa} alt="" />
                 <img className="payment" src={payment} alt="" />
@@ -156,9 +162,9 @@ function Home() {
                 <span>{name === "" ? <span>Seu nome aqui</span> : name} </span>
                 <span>{validate === "" ? <span>xx/xx</span> : validate} </span>
               </DivNickAndValidate>
-            </CardFront>
+            </Front>
 
-            <CardBack>
+            <Back>
               <Div />
               <DivCVVBack>
                 <DivNumberCVV>
@@ -166,13 +172,14 @@ function Home() {
                 </DivNumberCVV>
                 <p>CVV</p>
               </DivCVVBack>
-            </CardBack>
-
+            </Back>
+            </Flipper>
             <DivSecurityInfo className="info">
               <img src={security} alt="" />
               <span>Seus dados estão seguros</span>
             </DivSecurityInfo>
-          </DivCard>
+
+          </FlipContainer>
         </Swapper>
         <button
           className={disabled ? "isdisabled" : "isnotdisabled"}

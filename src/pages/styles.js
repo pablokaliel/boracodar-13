@@ -29,8 +29,8 @@ export const SwapperContainer = styled.div`
 
   .isdisabled {
     opacity: 0.5;
-    :hover{
-      background:#9333ea;
+    :hover {
+      background: #9333ea;
     }
   }
 
@@ -57,9 +57,9 @@ export const SwapperContainer = styled.div`
 `;
 
 export const DivInfo = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
-  width: 50%;
   margin-right: 64px;
 
   @media (max-width: 780px) {
@@ -152,9 +152,9 @@ export const DivValidate = styled.div`
 `;
 
 export const InputValitade = styled(InputMask)`
-  padding: 12px;
   width: 182px;
   height: 48px;
+  padding: 12px;
 
   background: #111827;
   border: 1px solid #374151;
@@ -171,6 +171,16 @@ export const DivCVV = styled.div`
   display: flex;
   flex-direction: column;
 
+  div {
+    display: flex;
+    gap: 6px;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
   label {
     margin-bottom: 6px;
     color: #e5e7eb;
@@ -185,80 +195,19 @@ export const DivCVV = styled.div`
 `;
 
 export const InputCVV = styled(InputMask)`
-  padding: 12px;
   width: 130px;
   height: 48px;
+  padding: 12px;
 
   background: #111827;
-  border: 1px solid #374151;
-  border-radius: 4px;
   color: #f3f4f6;
+  border-radius: 4px;
+  border: 1px solid #374151;
   outline: none;
 
   :focus {
     border: 1.5px solid #9333ea;
   }
-`;
-
-export const DivCard = styled.div`
-  width: 50%;
-  position: relative;
-
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  cursor: pointer;
-
-  @media (max-width: 780px) {
-    width: 100%;
-  }
-
-  :hover {
-    transform: rotateY(180deg);
-    .info {
-      transform: rotateY(-180deg);
-    }
-  }
-`;
-
-export const CardFront = styled.div`
-  width: 280px;
-  height: 168px;
-  padding: 0px 24px;
-  position: absolute;
-
-  background: rgba(17, 24, 39, 0.4);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border: none;
-
-  background-image: url(${bgblur});
-  backdrop-filter: blur(24px);
-  background-position: contain;
-
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-`;
-
-export const CardBack = styled.div`
-  height: 168px;
-  width: 280px;
-  padding-top: 16px;
-  position: absolute;
-  /* left: 0px; */
-
-  background: rgba(17, 24, 39, 0.4);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border: none;
-
-  background-image: url(${bgbackblur});
-  backdrop-filter: blur(24px);
-  background-position: contain;
-
-  transform: rotateY(180deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 `;
 
 export const Div = styled.div`
@@ -284,6 +233,7 @@ export const DivCVVBack = styled.div`
 export const DivNumberCVV = styled.div`
   width: 201px;
   height: 32px;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -296,8 +246,8 @@ export const DivNumberCVV = styled.div`
 
 export const DivVisa = styled.div`
   display: flex;
-  margin-bottom: 50px;
   justify-content: space-between;
+  margin-bottom: 50px;
 
   img {
     width: 32px;
@@ -342,7 +292,6 @@ export const DivSecurityInfo = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-top: 220px;
   gap: 8px;
 
   font-size: 14px;
@@ -351,5 +300,63 @@ export const DivSecurityInfo = styled.div`
 
   @media (max-width: 780px) {
     display: none;
+  }
+`;
+
+export const FlipContainer = styled.div`
+  perspective: 1000px;
+  width: 100%;
+
+`;
+
+export const Flipper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  transition: all 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+
+  @media (max-width: 780px) {
+    display: flex;
+    justify-content:center;
+  }
+
+  :hover {
+    transform: rotateY(180deg);
+  }
+`;
+
+export const Front = styled.div`
+  width: 100%;
+  height: 168px;
+  padding: 0px 24px;
+  position: absolute;
+
+  background-image: url(${bgbackblur});
+  backface-visibility: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: none;
+  
+  @media (max-width: 780px) {
+   width:280px; 
+  }
+`;
+
+export const Back = styled.div`
+  width: 100%;
+  height: 168px;
+  position: absolute;
+  padding-top: 16px;
+
+  background-image: url(${bgblur});
+  backface-visibility: hidden;
+  border-radius: 8px;
+
+  transform: rotateY(180deg);
+
+  @media (max-width: 780px) {
+   width:280px; 
   }
 `;
