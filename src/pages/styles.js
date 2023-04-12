@@ -14,7 +14,6 @@ export const Container = styled.div`
 
 export const SwapperContainer = styled.div`
   width: 736px;
-  height: 420px;
   padding: 32px;
 
   border: 1px solid #374151;
@@ -95,6 +94,7 @@ export const DivNumberCard = styled.div`
   }
 `;
 
+
 export const InputCard = styled(InputMask)`
   padding: 12px;
   width: 328px;
@@ -106,8 +106,23 @@ export const InputCard = styled(InputMask)`
   border-radius: 4px;
 
   outline: none;
+
   :focus {
     border: 1.5px solid #9333ea;
+  }
+
+  :invalid:focus{
+    border: 1.5px solid #fb7185;
+  }
+
+  :invalid:focus + .warningnick{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:14px;
+    margin-top:8px;
+    color:#fb7185;
   }
 `;
 
@@ -115,6 +130,10 @@ export const DivNick = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
+
+  .warningnick{
+    display: none;
+  }
 
   label {
     margin-bottom: 6px;
@@ -325,6 +344,9 @@ export const Flipper = styled.div`
   :hover {
     transform: rotateY(180deg);
   }
+  :active {
+    transform: rotateY(180deg);
+  }
 `;
 
 export const Front = styled.div`
@@ -360,3 +382,5 @@ export const Back = styled.div`
    width:280px; 
   }
 `;
+
+

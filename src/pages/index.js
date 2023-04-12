@@ -23,13 +23,13 @@ import {
   Front,
   Back,
 } from "./styles";
-
 import { useState } from "react";
 
 import visa from "../assets/visa.png";
 import security from "../assets/security.png";
 import payment from "../assets/payment.png";
 import help from "../assets/help.png";
+import warning from "../assets/warning.png";
 
 function Home() {
   const [name, setName] = useState("");
@@ -94,7 +94,7 @@ function Home() {
                 name="number"
                 value={number}
                 onChange={handleChangeNumber}
-                disableUnderline
+                required
               />
             </DivNumberCard>
 
@@ -108,8 +108,9 @@ function Home() {
                 value={name}
                 onChange={handleChangeName}
                 maxLength={20}
-                disableUnderline
+                required
               />
+              <div className="warningnick"><img src={warning} alt="error"/>Nome de titular é obrigatório</div>
             </DivNick>
 
             <DivTwoInputs>
@@ -122,7 +123,7 @@ function Home() {
                   name="validate"
                   value={validate}
                   onChange={handleChangeValidate}
-                  disableUnderline
+                  required
                 />
               </DivValidate>
 
@@ -138,7 +139,6 @@ function Home() {
                   name="code"
                   value={code}
                   onChange={handleChangeCode}
-                  disableUnderline
                 />
               </DivCVV>
             </DivTwoInputs>
