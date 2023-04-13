@@ -24,6 +24,6 @@
 
 <div align="center">
 <h1>Resultado</h1>
-<img src="https://user-images.githubusercontent.com/104238801/228942927-50d0e71a-fe5b-474a-8695-530eff8ac9d9.png" alt="page" width="700px" />
+<img src="https://user-images.githubusercontent.com/104238801/231757862-ed97e31e-f70f-4476-a419-81799728ef2c.png" alt="page" width="700px" />
 </div>
 
