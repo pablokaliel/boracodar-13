@@ -25,11 +25,14 @@ import {
 } from "./styles";
 import { useState } from "react";
 
-import visa from "../assets/visa.png";
 import security from "../assets/security.png";
 import payment from "../assets/payment.png";
 import help from "../assets/help.png";
 import warning from "../assets/warning.png";
+
+import visa from "../assets/visa.png";
+import elo from "../assets/elo.png";
+import mastercard from "../assets/master.png";
 
 function Home() {
   const [name, setName] = useState("");
@@ -65,6 +68,15 @@ function Home() {
       setDisabled(true);
     }
   }
+
+  const setCurrentFlag = (currentFlag) => {
+    if (currentFlag === "5" || currentFlag === "2" || currentFlag === "9") {
+      return mastercard;
+    } else if (currentFlag === "5" || currentFlag === "3" || currentFlag ==="7") {
+      return visa;
+    }
+    return elo;
+  };
 
   function onSubmit(userData) {
     console.log(userData);
@@ -110,7 +122,10 @@ function Home() {
                 maxLength={20}
                 required
               />
-              <div className="warningnick"><img src={warning} alt="error"/>Nome de titular é obrigatório</div>
+              <div className="warningnick">
+                <img src={warning} alt="error" />
+                Nome de titular é obrigatório
+              </div>
             </DivNick>
 
             <DivTwoInputs>
@@ -129,8 +144,12 @@ function Home() {
 
               <DivCVV>
                 <div>
-                <label htmlFor="code">CVV</label> 
-                 <img src={help} alt="botão de ajuda" title="este número está, geralmente, nas costas do seu cartão"/>
+                  <label htmlFor="code">CVV</label>
+                  <img
+                    src={help}
+                    alt="botão de ajuda"
+                    title="este número está, geralmente, nas costas do seu cartão"
+                  />
                 </div>
                 <InputCVV
                   placeholder="***"
@@ -146,39 +165,42 @@ function Home() {
 
           <FlipContainer>
             <Flipper>
-            <Front>
-              <DivVisa>
-                <img src={visa} alt="" />
-                <img className="payment" src={payment} alt="" />
-              </DivVisa>
+              <Front>
+                <DivVisa>
+                  <img src={setCurrentFlag(number[0])} alt="" />
+                  <img className="payment" src={payment} alt="" />
+                </DivVisa>
 
-              <DivNumbers>
-                <span>
-                  {number === "" ? <span>4716 9038 02** ****</span> : number}{" "}
-                </span>
-              </DivNumbers>
+                <DivNumbers>
+                  <span>
+                    {number === "" ? <span>4716 9038 02** ****</span> : number}{" "}
+                  </span>
+                </DivNumbers>
 
-              <DivNickAndValidate>
-                <span>{name === "" ? <span>Seu nome aqui</span> : name} </span>
-                <span>{validate === "" ? <span>xx/xx</span> : validate} </span>
-              </DivNickAndValidate>
-            </Front>
+                <DivNickAndValidate>
+                  <span>
+                    {name === "" ? <span>Seu nome aqui</span> : name}{" "}
+                  </span>
+                  <span>
+                    {validate === "" ? <span>xx/xx</span> : validate}{" "}
+                  </span>
+                </DivNickAndValidate>
+              </Front>
 
-            <Back>
-              <Div />
-              <DivCVVBack>
-                <DivNumberCVV>
-                  <span>{code === "" ? <span>***</span> : code} </span>
-                </DivNumberCVV>
-                <p>CVV</p>
-              </DivCVVBack>
-            </Back>
+              <Back>
+                <Div />
+                <DivCVVBack>
+                  <DivNumberCVV>
+                    <span>{code === "" ? <span>***</span> : code} </span>
+                  </DivNumberCVV>
+                  <p>CVV</p>
+                </DivCVVBack>
+              </Back>
             </Flipper>
             <DivSecurityInfo className="info">
               <img src={security} alt="" />
               <span>Seus dados estão seguros</span>
             </DivSecurityInfo>
-
           </FlipContainer>
         </Swapper>
         <button

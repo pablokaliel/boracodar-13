@@ -269,8 +269,7 @@ export const DivVisa = styled.div`
   margin-bottom: 50px;
 
   img {
-    width: 32px;
-    height: 32px;
+
     margin-top: 16px;
   }
 
